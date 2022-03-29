@@ -2,7 +2,7 @@
 
 > Volver al [**Documento inicial**](README.md).
 
-# Configurar como ejecutables los archivos de sincronización de repo
+## Configurar como ejecutables los archivos de sincronización de repo
 
 ```sh
 chmod 755 configs/*.sh
@@ -27,7 +27,7 @@ Todos deben correrse en una consola en la carpeta raíz de este proyecto.
 - `composer run migrar` para recrear las tablas.
 - `composer run hidratar` para llenar de datos las tablas.
 - `./scripts/listar-rutas` para listar las rutas con los verbos HTTP asociados.
-- `./scripts/iniciar` para levantar el servidor de desarrollo.
+- `yarn dev` para levantar el servidor de desarrollo.
 
 ## Uso del comando cURL
 
@@ -147,5 +147,8 @@ Este esqueleto está construido con las siguientes tecnologías:
 - [Brick\DateTime](https://github.com/brick/date-time): librería para manejo de fechas inmutables. Lo de inmutabilidad es super importante porque significa que las instancias no cambian su contenido interno al realizar una operación sobre ellas, sino que crean una nueva instancia.
 - [Dotenv](https://github.com/vlucas/phpdotenv): librería para leer archivos `.env` y similares y cargar los datos en las variables globales.
 - [EndyJasmi\Cuid](https://github.com/endyjasmi/cuid): es una librería generar ids únicos a nivel profesional/global. Esta librería permite que la BD delegue el trabajo de generar IDs únicos al servidor o hasta al cliente. Se utilizó para mantener el diseño orientado a objetos lo más correcto posible. Esto se debe a que son los objetos realmente los responsables de generar su código de identificación único.
+- [VueJS](https://v3.vuejs.org/): framework de vistas basado en el paradigma de componentes. Este paradigma define que todo elemento de la web puede considerarse un componente, es decir, un elemento aislado que contiene HTML, CSS y JS propio y exclusivo. VueJS tienen un enfoque de "**un componente por archivo**" (_Single File Component_, o **SFC**).
+- [Vite](https://vitejs.dev/): herramienta de desarrollo y buildeo de aplicaciones web. Se usa para integrar la aplicación web con el servidor, poder levantar el servidor de desarrollo.
+- [Typescript](https://www.typescriptlang.org/): lenguaje tipado que compila a JS. Es JS válido con aditivo de tipado. Facilita tanto el desarrollo como la confianza en el código.
 
 Todas estas librerías son herramientas profesionales que podrían llegar a utilizar en algún desarrollo personal o laboral.

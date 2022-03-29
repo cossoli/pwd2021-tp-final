@@ -9,11 +9,10 @@ class AddParticipantes extends Migrador
   public function up()
   {
     $sql = "CREATE TABLE `$this->tabla` (
-      `id` varchar(256) NOT NULL,
       `jugador_id` varchar(256) NOT NULL,
       `juego_id` varchar(256) NOT NULL,
 
-      PRIMARY KEY (`id`),
+      PRIMARY KEY (`jugador_id`, `juego_id`),
       KEY `participantes_jugador_fk` (`jugador_id`),
       KEY `participantes_juego_fk` (`juego_id`),
       CONSTRAINT `participantes_jugador_fk` FOREIGN KEY (`jugador_id`) REFERENCES `jugadores` (`id`),

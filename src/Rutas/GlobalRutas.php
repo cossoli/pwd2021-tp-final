@@ -13,7 +13,14 @@ final class GlobalRutas implements RutasInterface
     $app->get(
       pattern: '/',
       callable: function (Request $peticion, Response $respuesta, $args) {
-        return Utileria::responderConJson(respuesta: $respuesta, datos: 'hola');
+        return Utileria::responderConVista($respuesta, 'home', []);
+      },
+    );
+
+    $app->get(
+      pattern: '/cliente/assets/{asset}',
+      callable: function (Request $peticion, Response $respuesta, $args) {
+        return Utileria::responderConAsset($respuesta, $args['asset']);
       },
     );
   }

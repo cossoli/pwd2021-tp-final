@@ -68,5 +68,24 @@ final class JugadorRutas implements RutasInterface
         return $respuesta;
       },
     );
+
+    $app->get(
+      pattern: '/jugadores',
+      callable: function (Request $peticion, Response $respuesta, $args) {
+        return Utileria::responderConVista($respuesta, 'home', []);
+      },
+    );
+    $app->get(
+      pattern: '/jugadores/crear',
+      callable: function (Request $peticion, Response $respuesta, $args) {
+        return Utileria::responderConVista($respuesta, 'home', []);
+      },
+    );
+    $app->get(
+      pattern: '/jugadores/{id}',
+      callable: function (Request $peticion, Response $respuesta, $args) {
+        return Utileria::responderConVista($respuesta, 'home', []);
+      },
+    );
   }
 }

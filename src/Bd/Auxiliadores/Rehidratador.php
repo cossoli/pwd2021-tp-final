@@ -14,17 +14,17 @@ class Rehidratador
   }
   public static function ejecutar(): void
   {
-    if (!static::$app) {
+    if (!self::$app) {
       $container = require __DIR__ . '/../../../hidratador.php';
       $output = new NullOutput();
 
-      static::$app = new PhpmigApplication(
+      self::$app = new PhpmigApplication(
         container: $container,
         output: $output,
       );
     }
 
-    static::$app->down();
-    static::$app->up();
+    self::$app->down();
+    self::$app->up();
   }
 }
